@@ -97,3 +97,50 @@ Optimizer = Adam, initial RMSprop
 Metrics = ['accuracy', 'top_k_categorical_accuracy']
 
 # Training Progress
+
+There have been 14 trains with different arhitectures and hyperparameters. Presenting only a couple more interesting, the plots for all are located in the Plots folder.
+
+## Run nr 3
+
+This was the first run to return results, but the model overfitted the data to an extreme degree, train accuracy being over 99%, while test being around 10%. Same thing happed in the next 3 runs, but to a lesse degree, indicating we were making progress in reducing overfitting
+
+Test Loss , Test accuracy = [10.979912623035265, 0.12339331627198541]
+
+![Loss](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/loss3.png)
+![Acc](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/acc3.png)
+
+## Run nr 7
+
+The model is starting to no longer overfit the data, having added a weak dropout after each layer of 0.25, getting a few epochs with good results, and a test accuracy of about 20%.
+
+![Loss](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/loss7.png)
+![Acc](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/acc7.png)
+
+## Run nr 10
+
+The model has started to work properly, no longer overfitting the data, having added a dropout of 0.6 and artificial images created by the image generator.
+
+Test loss and accuracy = [2.917946684249736, 0.2614546620341609]
+
+![Loss](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/loss10.png)
+![Acc](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/acc10.png)
+
+## Run nr 11
+
+Batch normalization has been added, which increased the accuracy hugely.
+Test loss and accuracy = [2.556787643573268, 0.34658544411946657]
+
+![Loss](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/loss11.png)
+![Acc](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/acc11.png)
+
+## Run nr 12
+
+The best run of the arhitecture, having an Top1 acurracy of 36% and Top5 of 67%.
+Test loss, accuracy, top k accuracy = [2.5326014738816482, 0.3682692307692308, 0.6782051282051282]
+
+![Loss](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/loss12.png)
+![Acc](https://github.com/CondreaFlorin/Scene-Classifier/blob/master/Plots/acc12.png)
+
+# Future Work
+
+Given that them model no longer overfits the data, more images and longer training should increase the accuracy of the model. At the same time, building a more complex network either by tweak the parameters, or by adding more layers, since the training fits the testing well, we can make a trade off there, adding a bit of overfitting in exchange for better accuracy.
